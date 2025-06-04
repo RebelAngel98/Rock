@@ -14,26 +14,16 @@
 // limitations under the License.
 // </copyright>
 //
-namespace Rock.Enums.Communication.Chat
+using System;
+
+namespace Rock.Lava.Blocks
 {
     /// <summary>
-    /// Determines how notifications are sent for a chat channel.
+    /// Interface that classes can implement to be included when searching assemblies for custom Lava Commands.
     /// </summary>
-    public enum ChatNotificationMode
+    [Obsolete( "This interface was for DotLiquid which is no longer supported." )]
+    [RockObsolete( "18.0" )]
+    public interface IRockLavaBlock
     {
-        /// <summary>
-        /// Sends a notification for every new message within the chat channel.
-        /// </summary>
-        AllMessages = 0,
-
-        /// <summary>
-        /// Only sends a notification when an individual is mentioned.
-        /// </summary>
-        Mentions = 1,
-
-        /// <summary>
-        /// Disables all notifications for the chat channel.
-        /// </summary>
-        Silent = 2
     }
 }
