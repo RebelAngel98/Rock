@@ -1,6 +1,15 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
     "baseUrl": "./",
+    // Added the paths mapping for @Obsidian aliases.
+    // Remove or comment out the "paths" field below if this change causes issues.
+    "paths": {
+      "@Obsidian/Utility/*": ["Framework/Utility/*"],
+      "@Obsidian/Controls/*": ["Framework/Controls/*"],
+      "@Obsidian/ViewModels/*": ["Framework/ViewModels/*"],
+      "@Obsidian/Types": ["Framework/Types/index.d.ts"]
+    },
     "noImplicitAny": true,
     "noImplicitOverride": true,
     "noEmitOnError": true,

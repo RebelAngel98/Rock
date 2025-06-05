@@ -23,10 +23,10 @@ import { Guid } from "@Obsidian/Types";
 // ----------------------------------------------------------
 // 1) Define the shape of a raw group object returned by your API
 // ----------------------------------------------------------
-interface RawGroup {
-    Guid: string;
-    Name: string;
-    IsActive: boolean;
+interface IRawGroup {
+    guid: string;
+    name: string;
+    isActive: boolean;
 }
 
 // ----------------------------------------------------------
@@ -64,7 +64,7 @@ export default defineComponent({
     //    • update:modelValue when selection changes
     // ------------------------------------------------------
     emits: {
-        "update:modelValue": (val: ListItemBag | ListItemBag[] | null) => true
+        "update:modelValue": (_val: ListItemBag | ListItemBag[] | null) => true
     },
 
     setup(props, { emit }) {
@@ -127,14 +127,14 @@ export default defineComponent({
                 return [];
             }
 
-            // 7c) Parse JSON into RawGroup[]
-            const rawGroups = (await response.json()) as RawGroup[];
+            // 7c) Parse JSON into IRawGroup[]
+            const rawGroups = (await response.json()) as IRawGroup[];
 
             // 7d) Map to ListItemBag[]
             return rawGroups.map((g) => ({
-                value: g.Guid as Guid,
-                text: g.Name,
-                // You could add `category: g.IsActive ? "" : "(Inactive)"` or similar if desired.
+                value: g.guid as Guid,
+                text: g.name,
+                // You could add `category: g.isActive ? "" : "(Inactive)"` or similar if desired.
             })) as ListItemBag[];
         };
 
