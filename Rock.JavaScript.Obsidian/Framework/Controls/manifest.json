@@ -1,0 +1,22 @@
+{
+  {
+    "paths": [
+      {
+        "path": "Controls/BaseAsyncPicker.tsx",
+        "name": "BaseAsyncPicker",
+        "type": "Control"
+      },
+      {
+        "path": "Controls/ListPicker.tsx",
+        "name": "ListPicker",
+        "type": "Control"
+      },
+      {
+        "path": "Controls/GroupPicker.tsx",
+        "name": "GroupPicker",
+        "type": "Control"
+      }
+    ]
+  }
+
+}
